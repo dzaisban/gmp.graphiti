@@ -572,6 +572,58 @@ public abstract class AbstractFeatureProvider implements IFeatureProvider {
 		return res;
 	}
 
+	@Override
+	public PictogramElement[] getAllPictogramElementsForBusinessObjects(Collection<Object> businessObjects) {
+		final String SIGNATURE = "getAllPictogramElementsForBusinessObjects(Collection<Object>)"; //$NON-NLS-1$
+		boolean info = T.racer().info();
+		if (info) {
+			T.racer().entering(AbstractFeatureProvider.class, SIGNATURE, businessObjects);
+		}
+		List<PictogramElement> retList = new ArrayList<PictogramElement>();
+
+		IIndependenceSolver solver = getIndependenceSolver();
+		if (solver != null) {
+			for (Object businessObject: businessObjects) {
+				String keyForBusinessObject = solver.getKeyForBusinessObject(businessObject);
+				if (keyForBusinessObject != null) {
+					Collection<PictogramElement> allContainedPictogramElements = Graphiti.getPeService().getAllContainedPictogramElements(
+							getDiagramTypeProvider().getDiagram());
+					for (PictogramElement pe : allContainedPictogramElements) {
+						Property property = Graphiti.getPeService().getProperty(pe, ExternalPictogramLink.KEY_INDEPENDENT_PROPERTY);
+						if (property != null && Arrays.asList(getValues(property.getValue())).contains(keyForBusinessObject)) {
+							retList.add(pe);
+						}
+					}
+				}
+			}
+		}
+
+		Diagram diagram = getDiagramTypeProvider().getDiagram();
+		if (diagram != null) {
+			Collection<PictogramLink> pictogramLinks = diagram.getPictogramLinks();
+			for (PictogramLink pictogramLink : pictogramLinks) {
+				List<EObject> linkedBusinessObjects = pictogramLink.getBusinessObjects();
+				for (EObject obj : linkedBusinessObjects) {
+					for (Object businessObject: businessObjects) {
+						if (getDiagramTypeProvider().getCurrentToolBehaviorProvider().equalsBusinessObjects(businessObject, obj)) {
+							PictogramElement pe = pictogramLink.getPictogramElement();
+							if (pe != null) {
+								retList.add(pe);
+							}
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		PictogramElement[] res = retList.toArray(new PictogramElement[0]);
+		if (info) {
+			T.racer().exiting(AbstractFeatureProvider.class, SIGNATURE, res);
+		}
+		return res;
+	}
+
 	/**
 	 * Provides the first pictogram element which represents the given business
 	 * object.
