@@ -15,6 +15,8 @@
  *******************************************************************************/
 package org.eclipse.graphiti.features;
 
+import java.util.Collection;
+
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 import org.eclipse.graphiti.features.context.IAddBendpointContext;
 import org.eclipse.graphiti.features.context.IAddContext;
@@ -84,6 +86,10 @@ public class DefaultFeatureProviderWrapper implements IFeatureProvider {
 
 	public PictogramElement[] getAllPictogramElementsForBusinessObject(Object businessObject) {
 		return getInnerFeatureProvider().getAllPictogramElementsForBusinessObject(businessObject);
+	}
+
+	public PictogramElement[] getAllPictogramElementsForBusinessObjects(Collection<Object> businessObjects) {
+		return getInnerFeatureProvider().getAllPictogramElementsForBusinessObjects(businessObjects);
 	}
 
 	public Object getBusinessObjectForPictogramElement(PictogramElement pictogramElement) {

@@ -17,6 +17,8 @@
  *******************************************************************************/
 package org.eclipse.graphiti.dt;
 
+import java.util.Collection;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.internal.services.GraphitiInternal;
@@ -220,6 +222,10 @@ public abstract class AbstractDiagramTypeProvider extends AbstractExtension impl
 	}
 
 	public Object[] getRelatedBusinessObjects(Object[] bos) {
+		return new Object[0];
+	}
+
+	public Object[] getRelatedBusinessObjects(Collection<Object> bos) {
 		return new Object[0];
 	}
 
