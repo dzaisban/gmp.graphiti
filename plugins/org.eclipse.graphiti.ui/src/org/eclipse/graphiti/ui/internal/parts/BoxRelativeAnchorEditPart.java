@@ -93,6 +93,11 @@ public class BoxRelativeAnchorEditPart extends AnchorEditPart implements IBoxRel
 
 		ConnectionDragCreationTool tool = new ConnectionDragCreationTool() {
 
+			/** Traverse handle state */
+			protected static final int STATE_BUTTON_UP = ConnectionDragCreationTool.MAX_STATE << 1;
+			/** Max state */
+			protected static final int MAX_STATE = STATE_BUTTON_UP;
+
 			/**
 			 * changed order: feedback gets deleted after command is executed
 			 * (popup!)
@@ -101,7 +106,9 @@ public class BoxRelativeAnchorEditPart extends AnchorEditPart implements IBoxRel
 			protected boolean handleCreateConnection() {
 
 				Command endCommand = getCommand();
-				if (endCommand == null)					// No se completó la conexión
+				if (endCommand == null || // No se completó la conexión
+						(createCommand != null &&  // o se ha soltado el ratón antes de salir del anchor
+								getTargetEditPart().getModel() == createCommand.getSourceObject()))
 				{	
 					if (createCommand != null)			// Hay conexión iniciada
 					{
@@ -123,7 +130,20 @@ public class BoxRelativeAnchorEditPart extends AnchorEditPart implements IBoxRel
 
 				return true;
 			}
-							
+
+			protected boolean handleButtonUp(int button) {
+				if (isInState(STATE_CONNECTION_STARTED | STATE_DRAG))
+				{
+					setState(getState() | STATE_BUTTON_UP);
+					updateTargetRequest();
+					handleCreateConnection();
+					setState(getState() & ~STATE_BUTTON_UP); 
+				}
+				setState(STATE_TERMINAL);
+				handleFinished();
+				return true;
+			}
+
 			@Override
 			protected Command getCommand() {
 				Command command = super.getCommand();
