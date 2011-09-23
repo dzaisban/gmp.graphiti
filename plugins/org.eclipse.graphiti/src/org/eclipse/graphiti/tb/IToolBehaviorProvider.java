@@ -20,6 +20,7 @@ import org.eclipse.graphiti.IExecutionInfo;
 import org.eclipse.graphiti.features.context.ICustomContext;
 import org.eclipse.graphiti.features.context.IDoubleClickContext;
 import org.eclipse.graphiti.features.context.IPictogramElementContext;
+import org.eclipse.graphiti.features.context.ISingleClickContext;
 import org.eclipse.graphiti.features.custom.ICustomFeature;
 import org.eclipse.graphiti.features.impl.IIndependenceSolver;
 import org.eclipse.graphiti.mm.algorithms.GraphicsAlgorithm;
@@ -302,4 +303,17 @@ public interface IToolBehaviorProvider {
 	 * @since 0.8
 	 */
 	public boolean equalsBusinessObjects(Object o1, Object o2);
+
+	/**
+	 * Returns a feature which will be executed at a single click. For that
+	 * purpose a custom feature is used, because custom features appear in the
+	 * context menu and the single click feature could also appear in the
+	 * context menu.
+	 * 
+	 * @param context
+	 *            contains information where the single click gesture has
+	 *            happened
+	 * @return the feature to execute
+	 */
+	public ICustomFeature getSingleClickFeature(ISingleClickContext scc);
 }

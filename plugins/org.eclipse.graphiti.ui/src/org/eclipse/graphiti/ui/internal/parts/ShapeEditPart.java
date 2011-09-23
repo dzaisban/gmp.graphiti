@@ -47,11 +47,13 @@ import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.IMoveShapeFeature;
 import org.eclipse.graphiti.features.context.IDirectEditingContext;
 import org.eclipse.graphiti.features.context.IMoveShapeContext;
+import org.eclipse.graphiti.features.context.ISingleClickContext;
 import org.eclipse.graphiti.features.context.impl.DirectEditingContext;
 import org.eclipse.graphiti.features.context.impl.MoveShapeContext;
 import org.eclipse.graphiti.func.IDirectEditing;
 import org.eclipse.graphiti.internal.command.GenericFeatureCommandWithContext;
 import org.eclipse.graphiti.internal.features.context.impl.base.DoubleClickContext;
+import org.eclipse.graphiti.internal.features.context.impl.base.SingleClickContext;
 import org.eclipse.graphiti.internal.services.GraphitiInternal;
 import org.eclipse.graphiti.internal.util.T;
 import org.eclipse.graphiti.mm.algorithms.GraphicsAlgorithm;
@@ -199,6 +201,39 @@ public class ShapeEditPart extends AbstractGraphicalEditPart implements IShapeEd
 				}
 
 				return exclusionSet2;
+			}
+
+			@Override
+			protected boolean handleButtonUp(int button) {
+				Point point = getRelativeMouseLocation();
+
+				Shape shape = (Shape) getModel();
+				ILocationInfo locationInfo;
+
+				if (shape instanceof ConnectionDecorator && shape.getGraphicsAlgorithm() instanceof Text) {
+					locationInfo = new LocationInfo(shape, shape.getGraphicsAlgorithm());
+				} else {
+					locationInfo = Graphiti.getLayoutService().getLocationInfo(shape, point.x, point.y);
+				}
+
+				if (locationInfo != null) {
+					ISingleClickContext scc = new SingleClickContext(getPictogramElement(), locationInfo.getShape(),
+							locationInfo.getGraphicsAlgorithm());
+
+					IToolBehaviorProvider currentToolBehaviorProvider = getConfigurationProvider().getDiagramTypeProvider()
+							.getCurrentToolBehaviorProvider();
+
+					IFeature singleClickFeature = currentToolBehaviorProvider.getSingleClickFeature(scc);
+
+					if (singleClickFeature != null && singleClickFeature.canExecute(scc)) {
+						GenericFeatureCommandWithContext commandWithContext = new GenericFeatureCommandWithContext(singleClickFeature, scc);
+						DiagramEditorInternal diagramEditor = getConfigurationProvider().getDiagramEditor();
+						CommandStack commandStack = diagramEditor.getEditDomain().getCommandStack();
+						commandStack.execute(new GefCommandWrapper(commandWithContext, diagramEditor.getEditingDomain()));
+					}
+				}
+
+				return super.handleButtonUp(button);
 			}
 
 		};

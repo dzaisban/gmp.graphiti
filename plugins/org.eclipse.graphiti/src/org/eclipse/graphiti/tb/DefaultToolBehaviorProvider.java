@@ -33,6 +33,7 @@ import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.ICustomContext;
 import org.eclipse.graphiti.features.context.IDoubleClickContext;
 import org.eclipse.graphiti.features.context.IPictogramElementContext;
+import org.eclipse.graphiti.features.context.ISingleClickContext;
 import org.eclipse.graphiti.features.custom.ICustomFeature;
 import org.eclipse.graphiti.internal.Messages;
 import org.eclipse.graphiti.internal.datatypes.impl.LocationImpl;
@@ -274,6 +275,11 @@ public class DefaultToolBehaviorProvider implements IToolBehaviorProvider {
 
 	@Override
 	public ICustomFeature getDoubleClickFeature(IDoubleClickContext context) {
+		return null;
+	}
+
+	@Override
+	public ICustomFeature getSingleClickFeature(ISingleClickContext context) {
 		return null;
 	}
 
