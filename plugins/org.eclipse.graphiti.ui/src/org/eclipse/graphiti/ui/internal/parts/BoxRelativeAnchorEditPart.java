@@ -18,7 +18,9 @@
  */
 package org.eclipse.graphiti.ui.internal.parts;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.DragTracker;
@@ -27,11 +29,14 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.tools.ConnectionDragCreationTool;
 import org.eclipse.graphiti.features.IFeature;
+import org.eclipse.graphiti.features.IFeatureAndContext;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.internal.features.context.impl.base.PictogramElementContext;
 import org.eclipse.graphiti.internal.services.GraphitiInternal;
 import org.eclipse.graphiti.mm.pictograms.BoxRelativeAnchor;
 import org.eclipse.graphiti.services.Graphiti;
+import org.eclipse.graphiti.ui.internal.command.AbortConnectionCommand;
+import org.eclipse.graphiti.ui.internal.command.CreateConnectionCommand;
 import org.eclipse.graphiti.ui.internal.config.IConfigurationProvider;
 import org.eclipse.graphiti.ui.internal.util.gef.MultiCreationFactory;
 
@@ -44,6 +49,8 @@ import org.eclipse.graphiti.ui.internal.util.gef.MultiCreationFactory;
  */
 public class BoxRelativeAnchorEditPart extends AnchorEditPart implements IBoxRelativeAnchorEditPart {
 
+	private CreateConnectionCommand createCommand;
+	
 	/**
 	 * The Constructor.
 	 * 
@@ -94,11 +101,35 @@ public class BoxRelativeAnchorEditPart extends AnchorEditPart implements IBoxRel
 			protected boolean handleCreateConnection() {
 
 				Command endCommand = getCommand();
+				if (endCommand == null)					// No se completó la conexión
+				{	
+					if (createCommand != null)			// Hay conexión iniciada
+					{
+						List<IFeature> features = new ArrayList<IFeature>();
+						for (IFeatureAndContext featureContext : createCommand.getFeaturesAndContexts())
+							features.add(featureContext.getFeature());
+						
+						PictogramElementContext context = new PictogramElementContext(getPictogramElement());
+						endCommand = new AbortConnectionCommand(
+								getConfigurationProvider(), 
+								context.getPictogramElement(), 
+								features);
+					}
+ 				}
 				setCurrentCommand(endCommand);
 				executeCurrentCommand();
+				createCommand = null;
 				eraseSourceFeedback();
 
 				return true;
+			}
+							
+			@Override
+			protected Command getCommand() {
+				Command command = super.getCommand();
+				if (command instanceof CreateConnectionCommand)
+					createCommand = (CreateConnectionCommand)command ;	
+				return command;
 			}
 
 		};

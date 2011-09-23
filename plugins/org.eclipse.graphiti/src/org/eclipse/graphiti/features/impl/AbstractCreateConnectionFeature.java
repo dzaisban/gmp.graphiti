@@ -20,6 +20,7 @@ package org.eclipse.graphiti.features.impl;
 
 import org.eclipse.graphiti.features.ICreateConnectionFeature;
 import org.eclipse.graphiti.features.IFeatureProvider;
+import org.eclipse.graphiti.features.context.IAbortConnectionContext;
 import org.eclipse.graphiti.features.context.IContext;
 import org.eclipse.graphiti.features.context.ICreateConnectionContext;
 import org.eclipse.graphiti.internal.Messages;
@@ -95,6 +96,9 @@ public abstract class AbstractCreateConnectionFeature extends AbstractFeature im
 		if (context instanceof ICreateConnectionContext) {
 			create((ICreateConnectionContext) context);
 		}
+		else if (context instanceof IAbortConnectionContext) {
+			cancel((IAbortConnectionContext) context);
+		}
 	}
 
 	public String getCreateImageId() {
@@ -108,6 +112,11 @@ public abstract class AbstractCreateConnectionFeature extends AbstractFeature im
 	@Override
 	public String getName() {
 		return NAME;
+	}
+
+	@Override
+	public void cancel(IAbortConnectionContext context) {
+		// Empty implementation for backwards compatibility
 	}
 
 	private static final String NAME = Messages.AbstractCreateConnectionFeature_0_xfld;

@@ -18,6 +18,7 @@ package org.eclipse.graphiti.pattern;
 
 import org.eclipse.graphiti.features.ICustomUndoableFeature;
 import org.eclipse.graphiti.features.IFeatureProvider;
+import org.eclipse.graphiti.features.context.IAbortConnectionContext;
 import org.eclipse.graphiti.features.context.IContext;
 import org.eclipse.graphiti.features.context.ICreateConnectionContext;
 import org.eclipse.graphiti.features.impl.AbstractCreateConnectionFeature;
@@ -53,6 +54,11 @@ public class CreateConnectionFeatureForPattern extends AbstractCreateConnectionF
 
 	public Connection create(ICreateConnectionContext context) {
 		return delegate.create(context);
+	}
+
+	@Override
+	public void cancel(IAbortConnectionContext context) {
+		delegate.cancel(context);
 	}
 
 	@Override
@@ -103,4 +109,5 @@ public class CreateConnectionFeatureForPattern extends AbstractCreateConnectionF
 			((ICustomUndoablePattern) delegate).redo(this, context);
 		}
 	}
+
 }

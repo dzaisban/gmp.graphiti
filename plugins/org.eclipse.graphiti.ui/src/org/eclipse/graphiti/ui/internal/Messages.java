@@ -31,6 +31,7 @@ public class Messages extends NLS {
 	public static String CopyAction_0_xmsg;
 	public static String CopyAction_1_xfld;
 	public static String CreateConnectionCommand_0_xmsg;
+	public static String AbortConnectionCommand_0_xmsg;
 	public static String DefaultDeleteFeature_1_xfld;
 	public static String DefaultDeleteFeature_2_xmsg;
 	public static String DefaultDeleteFeature_3_xmsg;

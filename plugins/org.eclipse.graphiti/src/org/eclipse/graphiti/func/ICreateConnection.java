@@ -15,6 +15,7 @@
  *******************************************************************************/
 package org.eclipse.graphiti.func;
 
+import org.eclipse.graphiti.features.context.IAbortConnectionContext;
 import org.eclipse.graphiti.features.context.ICreateConnectionContext;
 import org.eclipse.graphiti.mm.pictograms.Connection;
 
@@ -55,5 +56,11 @@ public interface ICreateConnection extends ICreateInfo {
 	 * @return true, if successful
 	 */
 	boolean canStartConnection(ICreateConnectionContext context);
+	
+	/**
+	 * Cancels connection
+	 * @param context
+	 */
+	void cancel(IAbortConnectionContext context);
 
 }
