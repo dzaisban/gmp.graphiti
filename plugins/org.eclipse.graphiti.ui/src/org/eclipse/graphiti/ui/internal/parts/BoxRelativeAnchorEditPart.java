@@ -145,6 +145,14 @@ public class BoxRelativeAnchorEditPart extends AnchorEditPart implements IBoxRel
 			}
 
 			@Override
+			protected String getCommandName() {
+				if (isInState(STATE_BUTTON_UP))
+					return REQ_CONNECTION_END;
+
+				return super.getCommandName();
+			}
+
+			@Override
 			protected Command getCommand() {
 				Command command = super.getCommand();
 				if (command instanceof CreateConnectionCommand)
