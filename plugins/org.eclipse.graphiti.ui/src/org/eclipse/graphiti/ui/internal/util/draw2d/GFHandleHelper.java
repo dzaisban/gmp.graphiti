@@ -69,9 +69,9 @@ public class GFHandleHelper {
 			int supportedResizeDirections, boolean movable, boolean resizeAllowed) {
 		List<AbstractHandle> list = new ArrayList<AbstractHandle>();
 
-		list.add(new GFSurroundingHandle(owner, cp, PositionConstants.NSEW, movable));
-
 		if (resizeAllowed) {
+			list.add(new GFSurroundingHandle(owner, cp, PositionConstants.NSEW, movable));
+
 			if ((PositionConstants.NORTH_EAST & supportedResizeDirections) != 0)
 				list.add(new GFCornerHandle(owner, cp, PositionConstants.NORTH_EAST, supportedResizeDirections, movable));
 			if ((PositionConstants.SOUTH_EAST & supportedResizeDirections) != 0)
