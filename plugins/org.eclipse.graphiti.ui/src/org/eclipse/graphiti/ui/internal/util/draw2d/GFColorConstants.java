@@ -98,6 +98,8 @@ public interface GFColorConstants extends ColorConstants {
 
 	public static final Color HANDLE_BG = MEDIUM_ORANGE;
 
+	public static final Color HANDLE_BG_MAPPER = new Color(null, 0, 200, 0);
+
 	public static final Color BUTTON_FG = MEDIUM_ORANGE;
 
 	public static final Color BUTTON_BG = MEDIUM_BEIGE;

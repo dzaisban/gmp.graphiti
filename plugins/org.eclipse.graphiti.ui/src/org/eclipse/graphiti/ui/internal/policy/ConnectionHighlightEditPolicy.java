@@ -55,6 +55,8 @@ public class ConnectionHighlightEditPolicy extends ConnectionEndpointEditPolicy 
 
 	private Map<IFigure, Color> figureToColor = new HashMap<IFigure, Color>();
 
+	private Map<Shape, Integer> figureToAlpha = new HashMap<Shape, Integer>();
+
 	private Map<Shape, Integer> shapeToLineStyle = new HashMap<Shape, Integer>();
 
 	private IConfigurationProvider configurationProvider;
@@ -112,8 +114,8 @@ public class ConnectionHighlightEditPolicy extends ConnectionEndpointEditPolicy 
 		removeHighlight();
 
 		// determine new highlight-values
-		Color newForeground = GFColorConstants.HANDLE_BG;
-		int newLineStyle = Graphics.LINE_DASH;
+		Color newForeground = GFColorConstants.HANDLE_BG_MAPPER;
+		int newLineStyle = Graphics.LINE_SOLID;
 
 		if (getHost() != null && getHost().getModel() instanceof Connection) {
 			Connection connection = (Connection) getHost().getModel();
@@ -137,6 +139,9 @@ public class ConnectionHighlightEditPolicy extends ConnectionEndpointEditPolicy 
 		getConnectionFigure().setForegroundColor(newForeground);
 		shapeToLineStyle.put(getConnectionFigure(), getConnectionFigure().getLineStyle());
 		getConnectionFigure().setLineStyle(newLineStyle);
+		getConnectionFigure().setLineWidth(getConnectionFigure().getLineWidth() * 2);
+		figureToAlpha.put(getConnectionFigure(), getConnectionFigure().getAlpha());
+		getConnectionFigure().setAlpha(255);
 
 		if (getConnectionFigure() instanceof GFPolylineConnection) {
 			GFPolylineConnection polylineConnection = (GFPolylineConnection) getConnectionFigure();
@@ -147,7 +152,7 @@ public class ConnectionHighlightEditPolicy extends ConnectionEndpointEditPolicy 
 					decoration.setForegroundColor(newForeground);
 					if (decoration instanceof Shape) {
 						Shape decorationShape = (Shape) decoration;
-						shapeToLineStyle.put(decorationShape, new Integer(decorationShape.getLineStyle()));
+						shapeToLineStyle.put(decorationShape, decorationShape.getLineStyle());
 						decorationShape.setLineStyle(newLineStyle);
 					}
 				}
@@ -166,10 +171,18 @@ public class ConnectionHighlightEditPolicy extends ConnectionEndpointEditPolicy 
 		for (Shape lineStyleShape : lineStyleShapes) {
 			int lineStyle = shapeToLineStyle.get(lineStyleShape);
 			lineStyleShape.setLineStyle(lineStyle);
+			lineStyleShape.setLineWidth(lineStyleShape.getLineWidth() / 2);
+		}
+
+		Set<Shape> alphaFigures = figureToAlpha.keySet();
+		for (Shape alphaFigure : alphaFigures) {
+			Integer oldAlpha = figureToAlpha.get(alphaFigure);
+			alphaFigure.setAlpha(oldAlpha);
 		}
 
 		figureToColor.clear();
 		shapeToLineStyle.clear();
+		figureToAlpha.clear();
 	}
 
 	// ===================== private helper methods ===========================
