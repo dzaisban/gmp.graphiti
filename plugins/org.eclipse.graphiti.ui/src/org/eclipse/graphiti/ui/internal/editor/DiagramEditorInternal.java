@@ -1464,15 +1464,14 @@ public class DiagramEditorInternal extends GraphicalEditorWithFlyoutPalette impl
 		// If not the active editor, ignore selection changed.
 		boolean editorIsActive = getSite().getPage().isPartVisible(this);
 		if (!editorIsActive) {
-			// Check if we are a page of the active multipage editor
+			// Check if we are a page of the active multi page editor
 			IEditorPart activeEditor = getSite().getPage().getActiveEditor();
 			if (activeEditor != null) {
-				// Check if the top level editor if it is active
 				if (activeEditor instanceof MultiPageEditorPart) {
-					Object selectedPage = activeEditor.getAdapter(DiagramEditorInternal.class);
-					if (selectedPage == this) {
-						// Editor is active but the diagram sub editor is not
-						// its active page
+					Object selectedPage = ((MultiPageEditorPart) activeEditor).getAdapter(DiagramEditorInternal.class);
+					if (selectedPage instanceof DiagramEditorInternal) {
+						// Editor is active and diagram sub editor is its active
+						// page
 						editorIsActive = true;
 					}
 				}
