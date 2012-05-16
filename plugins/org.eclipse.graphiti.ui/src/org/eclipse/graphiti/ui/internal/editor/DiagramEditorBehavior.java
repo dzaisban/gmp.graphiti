@@ -600,6 +600,7 @@ public class DiagramEditorBehavior extends PlatformObject implements IEditingDom
 
 		// Remove all the registered listeners
 		editingDomain.getResourceSet().eAdapters().remove(resourceSetUpdateAdapter);
+		editingDomain.getResourceSet().eAdapters().remove(problemIndicationAdapter);
 		getOperationHistory().removeOperationHistoryListener(this);
 
 		for (Resource r : editingDomain.getResourceSet().getResources()) {
