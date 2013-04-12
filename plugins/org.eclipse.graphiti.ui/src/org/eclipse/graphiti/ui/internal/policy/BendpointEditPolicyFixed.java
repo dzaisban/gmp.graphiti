@@ -44,6 +44,7 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.ConnectionEditPart;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.SelectionHandlesEditPolicy;
@@ -303,8 +304,8 @@ public abstract class BendpointEditPolicyFixed extends SelectionHandlesEditPolic
 	 */
 	public void propertyChange(PropertyChangeEvent evt) {
 		// $TODO optimize so that handles aren't added constantly.
-//		if (getHost().getSelected() != EditPart.SELECTED_NONE)
-//			addSelectionHandles();
+		if (getHost().getSelected() != EditPart.SELECTED_NONE)
+			addSelectionHandles();
 	}
 
 	/**
