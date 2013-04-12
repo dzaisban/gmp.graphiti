@@ -18,6 +18,7 @@ package org.eclipse.graphiti.ui.editor;
 
 import java.util.Collections;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
@@ -521,6 +522,8 @@ public class DiagramEditorInput implements IEditorInput, IPersistableElement {
 			return getEditingDomain();
 		} else if (ResourceSet.class.isAssignableFrom(adapter)) {
 			return getEditingDomain().getResourceSet();
+		} else if (IFile.class.isAssignableFrom(adapter)) {
+			return GraphitiUiInternal.getEmfService().getFile(getUri(), getEditingDomain());
 		}
 		return null;
 	}
