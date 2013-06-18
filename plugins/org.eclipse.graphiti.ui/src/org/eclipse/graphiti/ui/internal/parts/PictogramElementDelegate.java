@@ -1,7 +1,7 @@
 /*******************************************************************************
  * <copyright>
  *
- * Copyright (c) 2005, 2011 SAP AG.
+ * Copyright (c) 2005, 2013 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,6 +11,7 @@
  *    SAP AG - initial API, implementation and documentation
  *    mwenz - Bug 348662 - Setting tooptip to null in tool behavior provider doesn't clear up
  *                         tooltip if the associated figure has a previous tooltip
+ *    Andreas Graf/mwenz - Bug 396793 - Text decorators
  *
  * </copyright>
  *
@@ -36,6 +37,7 @@ import org.eclipse.draw2d.PolylineConnection;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.Shape;
+import org.eclipse.draw2d.TextUtilities;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
@@ -88,7 +90,9 @@ import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.tb.DefaultToolBehaviorProvider;
 import org.eclipse.graphiti.tb.IDecorator;
 import org.eclipse.graphiti.tb.IImageDecorator;
+import org.eclipse.graphiti.tb.ITextDecorator;
 import org.eclipse.graphiti.tb.IToolBehaviorProvider;
+import org.eclipse.graphiti.ui.internal.IResourceRegistry;
 import org.eclipse.graphiti.ui.internal.config.IConfigurationProvider;
 import org.eclipse.graphiti.ui.internal.editor.DiagramEditorInternal;
 import org.eclipse.graphiti.ui.internal.figures.DecoratorImageFigure;
@@ -108,6 +112,8 @@ import org.eclipse.graphiti.ui.internal.figures.GFText;
 import org.eclipse.graphiti.ui.internal.services.GraphitiUiInternal;
 import org.eclipse.graphiti.ui.internal.util.DataTypeTransformation;
 import org.eclipse.graphiti.ui.services.GraphitiUi;
+import org.eclipse.graphiti.util.IColorConstant;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.ui.ISharedImages;
@@ -136,6 +142,7 @@ public class PictogramElementDelegate implements IPictogramElementDelegate {
 	private final Hashtable<GraphicsAlgorithm, IFigure> elementFigureHash = new Hashtable<GraphicsAlgorithm, IFigure>();
 
 	private final HashSet<Font> fontList = new HashSet<Font>();
+	private final HashSet<Font> decoratorFontList = new HashSet<Font>();
 
 	private PictogramElement pictogramElement;
 
@@ -204,6 +211,11 @@ public class PictogramElementDelegate implements IPictogramElementDelegate {
 	 */
 	@Override
 	public void deactivate() {
+
+		for (IFigure figure : elementFigureHash.values()) {
+			removeDecorators(figure);
+		}
+
 		disposeFonts();
 	}
 
@@ -907,6 +919,56 @@ public class PictogramElementDelegate implements IPictogramElementDelegate {
 			figure.setConstraint(decoratorFigure, boundsForDecoratorFigure);
 		}
 
+		// Decorate with text
+		if (decorator instanceof ITextDecorator) {
+			ITextDecorator textDecorator = (ITextDecorator) decorator;
+			String text = textDecorator.getText();
+			decoratorFigure = new Label(text);
+
+			Font font = new org.eclipse.swt.graphics.Font(null, textDecorator.getFontName(),
+					textDecorator.getFontSize(), SWT.NORMAL);
+			decoratorFontList.add(font);
+			Dimension dimension = TextUtilities.INSTANCE.getStringExtents(text, font);
+			boundsForDecoratorFigure.setSize(dimension.width, dimension.height);
+
+			decoratorFigure.setFont(font);
+
+			IResourceRegistry resourceRegistry = getConfigurationProvider().getResourceRegistry();
+			IColorConstant backgroundColor = textDecorator.getBackgroundColor();
+			if (backgroundColor != null) {
+				decoratorFigure.setOpaque(true);
+				decoratorFigure.setBackgroundColor(resourceRegistry.getSwtColor(backgroundColor.getRed(),
+						backgroundColor.getGreen(), backgroundColor.getBlue()));
+			}
+			IColorConstant foregroundColor = textDecorator.getForegroundColor();
+			if (foregroundColor != null) {
+				decoratorFigure.setForegroundColor(resourceRegistry.getSwtColor(foregroundColor.getRed(),
+						foregroundColor.getGreen(), foregroundColor.getBlue()));
+			}
+
+			if (decorator instanceof ILocation) {
+				ILocation location = (ILocation) decorator;
+				boundsForDecoratorFigure.setLocation(location.getX(), location.getY());
+			}
+
+			IFigure parent = figure.getParent();
+			if (parent != null) {
+				org.eclipse.draw2d.geometry.Rectangle ownerBounds = (org.eclipse.draw2d.geometry.Rectangle) parent
+						.getLayoutManager().getConstraint(figure);
+				boundsForDecoratorFigure.translate(ownerBounds.getLocation());
+			}
+
+			decoratorFigure.setVisible(true);
+			if (messageText != null && messageText.length() > 0) {
+				decoratorFigure.setToolTip(new Label(messageText));
+			}
+			if (parent.getLayoutManager() == null) {
+				parent.setLayoutManager(new XYLayout());
+			}
+			parent.add(decoratorFigure, boundsForDecoratorFigure, parent.getChildren().indexOf(figure) + 1);
+		}
+
+		// Return additionally created figure
 		return decoratorFigure;
 	}
 
@@ -915,6 +977,14 @@ public class PictogramElementDelegate implements IPictogramElementDelegate {
 	 */
 	private void disposeFonts() {
 		for (Iterator<Font> iter = fontList.iterator(); iter.hasNext();) {
+			Font font = iter.next();
+			font.dispose();
+		}
+		disposeDecoratorFonts();
+	}
+
+	private void disposeDecoratorFonts() {
+		for (Iterator<Font> iter = decoratorFontList.iterator(); iter.hasNext();) {
 			Font font = iter.next();
 			font.dispose();
 		}
@@ -1399,6 +1469,7 @@ public class PictogramElementDelegate implements IPictogramElementDelegate {
 			IToolBehaviorProvider toolBehaviorProvider) {
 		if (pe.isActive() && !(pe instanceof Anchor) && !(pe instanceof Connection) && graphicsAlgorithm.equals(pe.getGraphicsAlgorithm())) {
 
+			removeDecorators(figure);
 			List<IFigure> decFigureList = decoratorMap.get(figure);
 			if (decFigureList != null) {
 				for (IFigure decFigure : decFigureList) {
@@ -1425,6 +1496,21 @@ public class PictogramElementDelegate implements IPictogramElementDelegate {
 		}
 	}
 
+	private void removeDecorators(final IFigure figure) {
+		List<IFigure> decFigureList = decoratorMap.get(figure);
+		if (decFigureList != null) {
+			for (IFigure decFigure : decFigureList) {
+				IFigure parent = decFigure.getParent();
+				if (parent != null) {
+					parent.remove(decFigure);
+				}
+			}
+			decFigureList.clear();
+			decoratorMap.remove(figure);
+		}
+		disposeDecoratorFonts();
+	}
+	
 	@Override
 	public boolean isValid() {
 		return valid;
