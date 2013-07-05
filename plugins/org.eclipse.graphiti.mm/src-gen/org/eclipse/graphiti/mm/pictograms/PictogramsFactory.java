@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2012 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,6 @@
  * 
  * Contributors:
  *    SAP AG - initial API, implementation and documentation
- *    Benjamin Schmeling - mwenz - Bug 367483 - Support composite connections
  * 
  * </copyright>
  */
@@ -134,22 +133,20 @@ public interface PictogramsFactory extends EFactory {
 	PictogramLink createPictogramLink();
 
 	/**
-	 * Returns a new object of class '<em>Curved Connection</em>'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns a new object of class '<em>Curved Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Curved Connection</em>'.
 	 * @generated
-	 * @since 0.9
 	 */
 	CurvedConnection createCurvedConnection();
 
 	/**
-	 * Returns a new object of class '<em>Composite Connection</em>'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns a new object of class '<em>Composite Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Composite Connection</em>'.
 	 * @generated
-	 * @since 0.9
 	 */
 	CompositeConnection createCompositeConnection();
 

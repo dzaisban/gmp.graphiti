@@ -1,40 +1,34 @@
-/*******************************************************************************
+/**
  * <copyright>
- *
- * Copyright (c) 2011, 2011 SAP AG.
+ * 
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *    mwenz Bug 352119 - initial API, implementation and documentation contributed by Benjamin Schmeling
- *
+ *    SAP AG - initial API, implementation and documentation
+ * 
  * </copyright>
- *
- *******************************************************************************/
+ */
 package org.eclipse.graphiti.mm.algorithms.styles;
 
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Precision Point</b></em>'.
- * 
- * @since 0.9<!-- end-user-doc -->
- * 
- *        <p>
- *        The following features are supported:
- *        <ul>
- *        <li>
- *        {@link org.eclipse.graphiti.mm.algorithms.styles.PrecisionPoint#getX
- *        <em>X</em>}</li>
- *        <li>
- *        {@link org.eclipse.graphiti.mm.algorithms.styles.PrecisionPoint#getY
- *        <em>Y</em>}</li>
- *        </ul>
- *        </p>
- * 
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Precision Point</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link org.eclipse.graphiti.mm.algorithms.styles.PrecisionPoint#getX <em>X</em>}</li>
+ *   <li>{@link org.eclipse.graphiti.mm.algorithms.styles.PrecisionPoint#getY <em>Y</em>}</li>
+ * </ul>
+ * </p>
+ *
  * @see org.eclipse.graphiti.mm.algorithms.styles.StylesPackage#getPrecisionPoint()
  * @model
  * @generated

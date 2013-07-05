@@ -33,7 +33,6 @@ import org.eclipse.emf.ecore.EObject;
  * @see org.eclipse.graphiti.mm.algorithms.styles.StylesPackage#getTextStyleRegion()
  * @model
  * @generated
- * @since 0.10
  */
 public interface TextStyleRegion extends EObject {
 	/**

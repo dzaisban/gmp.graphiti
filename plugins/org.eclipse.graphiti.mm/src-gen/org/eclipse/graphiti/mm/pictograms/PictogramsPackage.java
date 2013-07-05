@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2012 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,17 +9,16 @@
  * 
  * Contributors:
  *    SAP AG - initial API, implementation and documentation
- *    Benjamin Schmeling - mwenz - Bug 367483 - Support composite connections
  * 
  * </copyright>
  */
 package org.eclipse.graphiti.mm.pictograms;
 
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.graphiti.mm.MmPackage;
 
 /**
@@ -562,12 +561,11 @@ public interface PictogramsPackage extends EPackage {
 	int DIAGRAM__VERTICAL_GRID_UNIT = CONTAINER_SHAPE_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Version</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int DIAGRAM__VERSION = CONTAINER_SHAPE_FEATURE_COUNT + 11;
 
@@ -792,8 +790,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.graphiti.mm.pictograms.impl.AdvancedAnchorImpl <em>Advanced Anchor</em>}' class.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.eclipse.graphiti.mm.pictograms.impl.AdvancedAnchorImpl
 	 * @see org.eclipse.graphiti.mm.pictograms.impl.PictogramsPackageImpl#getAdvancedAnchor()
 	 * @generated
@@ -803,18 +800,16 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ADVANCED_ANCHOR__PROPERTIES = ANCHOR__PROPERTIES;
 
 	/**
-	 * The feature id for the '<em><b>Visible</b></em>' attribute. <!--
-	 * begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Visible</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -823,38 +818,34 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Graphics Algorithm</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ADVANCED_ANCHOR__GRAPHICS_ALGORITHM = ANCHOR__GRAPHICS_ALGORITHM;
 
 	/**
-	 * The feature id for the '<em><b>Active</b></em>' attribute. <!--
-	 * begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ADVANCED_ANCHOR__ACTIVE = ANCHOR__ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>Link</b></em>' containment reference. <!--
-	 * begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Link</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ADVANCED_ANCHOR__LINK = ANCHOR__LINK;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' container reference. <!--
-	 * begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -863,8 +854,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Outgoing Connections</b></em>' reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -873,8 +863,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Incoming Connections</b></em>' reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -883,8 +872,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Referenced Graphics Algorithm</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -893,8 +881,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Use Anchor Location As Connection Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -903,8 +890,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Advanced Anchor</em>' class.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1004,8 +990,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Use Anchor Location As Connection Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1123,8 +1108,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Use Anchor Location As Connection Endpoint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1639,12 +1623,10 @@ public interface PictogramsPackage extends EPackage {
 	 */
 	int PICTOGRAM_LINK_FEATURE_COUNT = MmPackage.PROPERTY_CONTAINER_FEATURE_COUNT + 2;
 
-
 	/**
 	 * The meta object id for the '{@link org.eclipse.graphiti.mm.pictograms.impl.CurvedConnectionImpl <em>Curved Connection</em>}' class.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.eclipse.graphiti.mm.pictograms.impl.CurvedConnectionImpl
 	 * @see org.eclipse.graphiti.mm.pictograms.impl.PictogramsPackageImpl#getCurvedConnection()
 	 * @generated
@@ -1654,98 +1636,88 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CURVED_CONNECTION__PROPERTIES = CONNECTION__PROPERTIES;
 
 	/**
-	 * The feature id for the '<em><b>Visible</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Visible</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int CURVED_CONNECTION__VISIBLE = CONNECTION__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>Graphics Algorithm</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CURVED_CONNECTION__GRAPHICS_ALGORITHM = CONNECTION__GRAPHICS_ALGORITHM;
 
 	/**
-	 * The feature id for the '<em><b>Active</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int CURVED_CONNECTION__ACTIVE = CONNECTION__ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>Link</b></em>' containment reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Link</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int CURVED_CONNECTION__LINK = CONNECTION__LINK;
 
 	/**
 	 * The feature id for the '<em><b>Anchors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CURVED_CONNECTION__ANCHORS = CONNECTION__ANCHORS;
 
 	/**
-	 * The feature id for the '<em><b>Start</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Start</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int CURVED_CONNECTION__START = CONNECTION__START;
 
 	/**
-	 * The feature id for the '<em><b>End</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>End</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int CURVED_CONNECTION__END = CONNECTION__END;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' container reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int CURVED_CONNECTION__PARENT = CONNECTION__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Connection Decorators</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1754,8 +1726,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Control Points</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1764,19 +1735,16 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Curved Connection</em>' class.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CURVED_CONNECTION_FEATURE_COUNT = CONNECTION_FEATURE_COUNT + 1;
 
-
 	/**
 	 * The meta object id for the '{@link org.eclipse.graphiti.mm.pictograms.impl.CompositeConnectionImpl <em>Composite Connection</em>}' class.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.eclipse.graphiti.mm.pictograms.impl.CompositeConnectionImpl
 	 * @see org.eclipse.graphiti.mm.pictograms.impl.PictogramsPackageImpl#getCompositeConnection()
 	 * @generated
@@ -1786,118 +1754,106 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int COMPOSITE_CONNECTION__PROPERTIES = CONNECTION__PROPERTIES;
 
 	/**
-	 * The feature id for the '<em><b>Visible</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Visible</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int COMPOSITE_CONNECTION__VISIBLE = CONNECTION__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>Graphics Algorithm</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int COMPOSITE_CONNECTION__GRAPHICS_ALGORITHM = CONNECTION__GRAPHICS_ALGORITHM;
 
 	/**
-	 * The feature id for the '<em><b>Active</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int COMPOSITE_CONNECTION__ACTIVE = CONNECTION__ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>Link</b></em>' containment reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Link</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int COMPOSITE_CONNECTION__LINK = CONNECTION__LINK;
 
 	/**
 	 * The feature id for the '<em><b>Anchors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int COMPOSITE_CONNECTION__ANCHORS = CONNECTION__ANCHORS;
 
 	/**
-	 * The feature id for the '<em><b>Start</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Start</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int COMPOSITE_CONNECTION__START = CONNECTION__START;
 
 	/**
-	 * The feature id for the '<em><b>End</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>End</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int COMPOSITE_CONNECTION__END = CONNECTION__END;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' container reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int COMPOSITE_CONNECTION__PARENT = CONNECTION__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Connection Decorators</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int COMPOSITE_CONNECTION__CONNECTION_DECORATORS = CONNECTION__CONNECTION_DECORATORS;
 
 	/**
-	 * The feature id for the '<em><b>Children</b></em>' reference list. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 0.9
 	 */
 	int COMPOSITE_CONNECTION__CHILDREN = CONNECTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Composite Connection</em>' class.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2069,8 +2025,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.graphiti.mm.pictograms.Diagram#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Version</em>'.
 	 * @see org.eclipse.graphiti.mm.pictograms.Diagram#getVersion()
 	 * @see #getDiagram()
@@ -2433,8 +2388,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.graphiti.mm.pictograms.AdvancedAnchor <em>Advanced Anchor</em>}'.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Advanced Anchor</em>'.
 	 * @see org.eclipse.graphiti.mm.pictograms.AdvancedAnchor
 	 * @generated
@@ -2442,14 +2396,10 @@ public interface PictogramsPackage extends EPackage {
 	EClass getAdvancedAnchor();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.graphiti.mm.pictograms.AdvancedAnchor#isUseAnchorLocationAsConnectionEndpoint
-	 * <em>Use Anchor Location As Connection Endpoint</em>}'. <!--
-	 * begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
-	 * @return the meta object for the attribute '
-	 *         <em>Use Anchor Location As Connection Endpoint</em>'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.graphiti.mm.pictograms.AdvancedAnchor#isUseAnchorLocationAsConnectionEndpoint <em>Use Anchor Location As Connection Endpoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Anchor Location As Connection Endpoint</em>'.
 	 * @see org.eclipse.graphiti.mm.pictograms.AdvancedAnchor#isUseAnchorLocationAsConnectionEndpoint()
 	 * @see #getAdvancedAnchor()
 	 * @generated
@@ -2457,23 +2407,19 @@ public interface PictogramsPackage extends EPackage {
 	EAttribute getAdvancedAnchor_UseAnchorLocationAsConnectionEndpoint();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.graphiti.mm.pictograms.CurvedConnection
-	 * <em>Curved Connection</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * Returns the meta object for class '{@link org.eclipse.graphiti.mm.pictograms.CurvedConnection <em>Curved Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Curved Connection</em>'.
 	 * @see org.eclipse.graphiti.mm.pictograms.CurvedConnection
 	 * @generated
-	 * @since 0.9
 	 */
 	EClass getCurvedConnection();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.graphiti.mm.pictograms.CurvedConnection#getControlPoints <em>Control Points</em>}'.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Control Points</em>'.
 	 * @see org.eclipse.graphiti.mm.pictograms.CurvedConnection#getControlPoints()
 	 * @see #getCurvedConnection()
@@ -2484,8 +2430,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.graphiti.mm.pictograms.CompositeConnection <em>Composite Connection</em>}'.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Composite Connection</em>'.
 	 * @see org.eclipse.graphiti.mm.pictograms.CompositeConnection
 	 * @generated
@@ -2495,8 +2440,7 @@ public interface PictogramsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference list '{@link org.eclipse.graphiti.mm.pictograms.CompositeConnection#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Children</em>'.
 	 * @see org.eclipse.graphiti.mm.pictograms.CompositeConnection#getChildren()
 	 * @see #getCompositeConnection()
@@ -2655,8 +2599,7 @@ public interface PictogramsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
-		 * 
-		 * @since 0.9 <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute DIAGRAM__VERSION = eINSTANCE.getDiagram_Version();
@@ -2950,8 +2893,7 @@ public interface PictogramsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.graphiti.mm.pictograms.impl.AdvancedAnchorImpl <em>Advanced Anchor</em>}' class.
 		 * <!-- begin-user-doc -->
-		 * 
-		 * @since 0.9 <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.eclipse.graphiti.mm.pictograms.impl.AdvancedAnchorImpl
 		 * @see org.eclipse.graphiti.mm.pictograms.impl.PictogramsPackageImpl#getAdvancedAnchor()
 		 * @generated
@@ -2961,8 +2903,7 @@ public interface PictogramsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Use Anchor Location As Connection Endpoint</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
-		 * 
-		 * @since 0.9 <!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ADVANCED_ANCHOR__USE_ANCHOR_LOCATION_AS_CONNECTION_ENDPOINT = eINSTANCE.getAdvancedAnchor_UseAnchorLocationAsConnectionEndpoint();
@@ -2970,8 +2911,7 @@ public interface PictogramsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.graphiti.mm.pictograms.impl.CurvedConnectionImpl <em>Curved Connection</em>}' class.
 		 * <!-- begin-user-doc -->
-		 * 
-		 * @since 0.9<!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.eclipse.graphiti.mm.pictograms.impl.CurvedConnectionImpl
 		 * @see org.eclipse.graphiti.mm.pictograms.impl.PictogramsPackageImpl#getCurvedConnection()
 		 * @generated
@@ -2981,8 +2921,7 @@ public interface PictogramsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Control Points</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
-		 * 
-		 * @since 0.9<!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CURVED_CONNECTION__CONTROL_POINTS = eINSTANCE.getCurvedConnection_ControlPoints();
@@ -2990,8 +2929,7 @@ public interface PictogramsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.graphiti.mm.pictograms.impl.CompositeConnectionImpl <em>Composite Connection</em>}' class.
 		 * <!-- begin-user-doc -->
-		 * 
-		 * @since 0.9<!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.eclipse.graphiti.mm.pictograms.impl.CompositeConnectionImpl
 		 * @see org.eclipse.graphiti.mm.pictograms.impl.PictogramsPackageImpl#getCompositeConnection()
 		 * @generated
@@ -3001,8 +2939,7 @@ public interface PictogramsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Children</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
-		 * 
-		 * @since 0.9<!-- end-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference COMPOSITE_CONNECTION__CHILDREN = eINSTANCE.getCompositeConnection_Children();

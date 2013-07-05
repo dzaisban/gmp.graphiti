@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2012 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,6 @@
  * 
  * Contributors:
  *    SAP AG - initial API, implementation and documentation
- *    Benjamin Schmeling - mwenz - Bug 367483 - Support composite connections
  * 
  * </copyright>
  */
@@ -18,23 +17,12 @@ package org.eclipse.graphiti.mm.pictograms.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.graphiti.mm.pictograms.BoxRelativeAnchor;
-import org.eclipse.graphiti.mm.pictograms.ChopboxAnchor;
-import org.eclipse.graphiti.mm.pictograms.CompositeConnection;
-import org.eclipse.graphiti.mm.pictograms.Connection;
-import org.eclipse.graphiti.mm.pictograms.ConnectionDecorator;
-import org.eclipse.graphiti.mm.pictograms.ContainerShape;
-import org.eclipse.graphiti.mm.pictograms.CurvedConnection;
-import org.eclipse.graphiti.mm.pictograms.Diagram;
-import org.eclipse.graphiti.mm.pictograms.FixPointAnchor;
-import org.eclipse.graphiti.mm.pictograms.FreeFormConnection;
-import org.eclipse.graphiti.mm.pictograms.ManhattanConnection;
-import org.eclipse.graphiti.mm.pictograms.PictogramLink;
-import org.eclipse.graphiti.mm.pictograms.PictogramsFactory;
-import org.eclipse.graphiti.mm.pictograms.PictogramsPackage;
-import org.eclipse.graphiti.mm.pictograms.Shape;
+
+import org.eclipse.graphiti.mm.pictograms.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +39,7 @@ public class PictogramsFactoryImpl extends EFactoryImpl implements PictogramsFac
 	 */
 	public static PictogramsFactory init() {
 		try {
-			PictogramsFactory thePictogramsFactory = (PictogramsFactory)EPackage.Registry.INSTANCE.getEFactory("http://eclipse.org/graphiti/mm/pictograms"); 
+			PictogramsFactory thePictogramsFactory = (PictogramsFactory)EPackage.Registry.INSTANCE.getEFactory(PictogramsPackage.eNS_URI);
 			if (thePictogramsFactory != null) {
 				return thePictogramsFactory;
 			}

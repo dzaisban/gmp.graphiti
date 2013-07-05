@@ -16,10 +16,9 @@ package org.eclipse.graphiti.mm.pictograms;
 
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Advanced Anchor</b></em>'.
- * 
- * @since 0.9 <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Advanced Anchor</b></em>'.
+ * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:

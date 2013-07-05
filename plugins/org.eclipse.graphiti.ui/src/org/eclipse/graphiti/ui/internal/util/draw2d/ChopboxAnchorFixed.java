@@ -52,7 +52,7 @@ public class ChopboxAnchorFixed extends ChopboxAnchor {
 			Rectangle r = Rectangle.SINGLETON;
 			r.setBounds(box);
 			getOwner().translateToAbsolute(r); // consider zoom etc.
-			Point point = new Point(r.x(), r.y());
+			Point point = new Point(r.x, r.y);
 			return point;
 		}
 

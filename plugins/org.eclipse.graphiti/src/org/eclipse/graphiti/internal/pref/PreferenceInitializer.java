@@ -35,7 +35,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 */
 	@Override
 	public void initializeDefaultPreferences() {
-		IEclipsePreferences node = DefaultScope.INSTANCE.getNode(GraphitiPlugin.PLUGIN_ID);
+		IEclipsePreferences node = new DefaultScope().getNode(GraphitiPlugin.PLUGIN_ID);
 		node.putBoolean(GFPreferences.CPU_PROFILING_TRACE_ACTIVE, false);
 		node.putBoolean(GFPreferences.RECURSIVE_CHECK_FOR_UPDATE_ACTIVE, false);
 		node.putBoolean(GFPreferences.INVISIBLE_RECTANGLES_SHOWN, false);

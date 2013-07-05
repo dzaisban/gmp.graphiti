@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,9 @@
 package org.eclipse.graphiti.mm.pictograms;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.graphiti.mm.StyleContainer;
+
 import org.eclipse.graphiti.mm.algorithms.styles.Color;
 import org.eclipse.graphiti.mm.algorithms.styles.Font;
 
@@ -247,13 +249,11 @@ public interface Diagram extends ContainerShape, StyleContainer {
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.
 	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9
-	 *        <p>
-	 *        If the meaning of the '<em>Version</em>' attribute isn't clear,
-	 *        there really should be more of a description here...
-	 *        </p>
-	 *        <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Version</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see org.eclipse.graphiti.mm.pictograms.PictogramsPackage#getDiagram_Version()
 	 * @model default="" suppressedSetVisibility="true"

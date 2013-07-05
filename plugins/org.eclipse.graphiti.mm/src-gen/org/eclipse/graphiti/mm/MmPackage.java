@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -222,16 +222,6 @@ public interface MmPackage extends EPackage {
 	EAttribute getProperty_Value();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.graphiti.mm.GraphicsAlgorithmContainer <em>Graphics Algorithm Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Graphics Algorithm Container</em>'.
-	 * @see org.eclipse.graphiti.mm.GraphicsAlgorithmContainer
-	 * @generated
-	 */
-	EClass getGraphicsAlgorithmContainer();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.graphiti.mm.PropertyContainer <em>Property Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,6 +241,16 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPropertyContainer_Properties();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.graphiti.mm.GraphicsAlgorithmContainer <em>Graphics Algorithm Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Graphics Algorithm Container</em>'.
+	 * @see org.eclipse.graphiti.mm.GraphicsAlgorithmContainer
+	 * @generated
+	 */
+	EClass getGraphicsAlgorithmContainer();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.graphiti.mm.StyleContainer <em>Style Container</em>}'.
@@ -322,16 +322,6 @@ public interface MmPackage extends EPackage {
 		EAttribute PROPERTY__VALUE = eINSTANCE.getProperty_Value();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.graphiti.mm.impl.GraphicsAlgorithmContainerImpl <em>Graphics Algorithm Container</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.graphiti.mm.impl.GraphicsAlgorithmContainerImpl
-		 * @see org.eclipse.graphiti.mm.impl.MmPackageImpl#getGraphicsAlgorithmContainer()
-		 * @generated
-		 */
-		EClass GRAPHICS_ALGORITHM_CONTAINER = eINSTANCE.getGraphicsAlgorithmContainer();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.graphiti.mm.impl.PropertyContainerImpl <em>Property Container</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -348,6 +338,16 @@ public interface MmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY_CONTAINER__PROPERTIES = eINSTANCE.getPropertyContainer_Properties();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.graphiti.mm.impl.GraphicsAlgorithmContainerImpl <em>Graphics Algorithm Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.graphiti.mm.impl.GraphicsAlgorithmContainerImpl
+		 * @see org.eclipse.graphiti.mm.impl.MmPackageImpl#getGraphicsAlgorithmContainer()
+		 * @generated
+		 */
+		EClass GRAPHICS_ALGORITHM_CONTAINER = eINSTANCE.getGraphicsAlgorithmContainer();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.graphiti.mm.impl.StyleContainerImpl <em>Style Container</em>}' class.

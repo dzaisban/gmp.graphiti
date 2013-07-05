@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,8 +20,6 @@ import org.eclipse.emf.ecore.EFactory;
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
- * @noextend This interface is not intended to be extended by clients.
- * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  * @see org.eclipse.graphiti.mm.algorithms.styles.StylesPackage
  * @generated
@@ -117,12 +115,11 @@ public interface StylesFactory extends EFactory {
 	Color createColor();
 
 	/**
-	 * Returns a new object of class '<em>Precision Point</em>'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns a new object of class '<em>Precision Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Precision Point</em>'.
 	 * @generated
-	 * @since 0.9
 	 */
 	PrecisionPoint createPrecisionPoint();
 
@@ -132,7 +129,6 @@ public interface StylesFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Text Style</em>'.
 	 * @generated
-	 * @since 0.10
 	 */
 	TextStyle createTextStyle();
 
@@ -142,7 +138,6 @@ public interface StylesFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Text Style Region</em>'.
 	 * @generated
-	 * @since 0.10
 	 */
 	TextStyleRegion createTextStyleRegion();
 

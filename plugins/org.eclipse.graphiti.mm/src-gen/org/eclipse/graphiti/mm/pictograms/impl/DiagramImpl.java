@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,20 +18,27 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.graphiti.mm.MmPackage;
 import org.eclipse.graphiti.mm.StyleContainer;
+
 import org.eclipse.graphiti.mm.algorithms.styles.Color;
 import org.eclipse.graphiti.mm.algorithms.styles.Font;
 import org.eclipse.graphiti.mm.algorithms.styles.Style;
 import org.eclipse.graphiti.mm.algorithms.styles.StylesPackage;
+
 import org.eclipse.graphiti.mm.pictograms.Connection;
 import org.eclipse.graphiti.mm.pictograms.Diagram;
 import org.eclipse.graphiti.mm.pictograms.PictogramLink;
@@ -165,14 +172,7 @@ public class DiagramImpl extends ContainerShapeImpl implements Diagram {
 	/**
 	 * The default value of the '{@link #isShowGuides() <em>Show Guides</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @deprecated This attribute simply exists because of compatibility (after
-	 *             removing it old diagrams would not be readable any more). It
-	 *             is never evaluated, instead the Graphiti framework queries
-	 *             the tool behaviour provider if guides shall be shown in a
-	 *             diagram editor.<br>
-	 * 
-	 *             <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #isShowGuides()
 	 * @generated
 	 * @ordered
@@ -182,14 +182,7 @@ public class DiagramImpl extends ContainerShapeImpl implements Diagram {
 	/**
 	 * The cached value of the '{@link #isShowGuides() <em>Show Guides</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @deprecated This attribute simply exists because of compatibility (after
-	 *             removing it old diagrams would not be readable any more). It
-	 *             is never evaluated, instead the Graphiti framework queries
-	 *             the tool behaviour provider if guides shall be shown in a
-	 *             diagram editor.<br>
-	 * 
-	 *             <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #isShowGuides()
 	 * @generated
 	 * @ordered

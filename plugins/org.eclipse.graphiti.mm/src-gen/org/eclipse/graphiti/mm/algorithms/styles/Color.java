@@ -17,8 +17,9 @@ package org.eclipse.graphiti.mm.algorithms.styles;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Color</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Color</b></em>'.
+ * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -35,52 +36,46 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Color extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Red</b></em>' attribute. <!--
-	 * begin-user-doc -->
+	 * Returns the value of the '<em><b>Red</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Red</em>' attribute isn't clear, there really
-	 * should be more of a description here...
+	 * If the meaning of the '<em>Red</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Red</em>' attribute.
 	 * @see org.eclipse.graphiti.mm.algorithms.styles.StylesPackage#getColor_Red()
-	 * @model unique="false" required="true" ordered="false"
-	 *        suppressedSetVisibility="true"
+	 * @model unique="false" required="true" ordered="false" suppressedSetVisibility="true"
 	 * @generated
 	 */
 	int getRed();
 
 	/**
-	 * Returns the value of the '<em><b>Green</b></em>' attribute. <!--
-	 * begin-user-doc -->
+	 * Returns the value of the '<em><b>Green</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Green</em>' attribute isn't clear, there
-	 * really should be more of a description here...
+	 * If the meaning of the '<em>Green</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Green</em>' attribute.
 	 * @see org.eclipse.graphiti.mm.algorithms.styles.StylesPackage#getColor_Green()
-	 * @model unique="false" required="true" ordered="false"
-	 *        suppressedSetVisibility="true"
+	 * @model unique="false" required="true" ordered="false" suppressedSetVisibility="true"
 	 * @generated
 	 */
 	int getGreen();
 
 	/**
-	 * Returns the value of the '<em><b>Blue</b></em>' attribute. <!--
-	 * begin-user-doc -->
+	 * Returns the value of the '<em><b>Blue</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Blue</em>' attribute isn't clear, there really
-	 * should be more of a description here...
+	 * If the meaning of the '<em>Blue</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Blue</em>' attribute.
 	 * @see org.eclipse.graphiti.mm.algorithms.styles.StylesPackage#getColor_Blue()
-	 * @model unique="false" required="true" ordered="false"
-	 *        suppressedSetVisibility="true"
+	 * @model unique="false" required="true" ordered="false" suppressedSetVisibility="true"
 	 * @generated
 	 */
 	int getBlue();

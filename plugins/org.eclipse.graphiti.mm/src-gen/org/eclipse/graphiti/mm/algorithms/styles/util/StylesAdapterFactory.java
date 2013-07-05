@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,23 +16,14 @@ package org.eclipse.graphiti.mm.algorithms.styles.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.graphiti.mm.StyleContainer;
-import org.eclipse.graphiti.mm.algorithms.styles.AbstractStyle;
-import org.eclipse.graphiti.mm.algorithms.styles.AdaptedGradientColoredAreas;
-import org.eclipse.graphiti.mm.algorithms.styles.Color;
-import org.eclipse.graphiti.mm.algorithms.styles.Font;
-import org.eclipse.graphiti.mm.algorithms.styles.GradientColoredArea;
-import org.eclipse.graphiti.mm.algorithms.styles.GradientColoredAreas;
-import org.eclipse.graphiti.mm.algorithms.styles.GradientColoredLocation;
-import org.eclipse.graphiti.mm.algorithms.styles.Point;
-import org.eclipse.graphiti.mm.algorithms.styles.PrecisionPoint;
-import org.eclipse.graphiti.mm.algorithms.styles.RenderingStyle;
-import org.eclipse.graphiti.mm.algorithms.styles.Style;
-import org.eclipse.graphiti.mm.algorithms.styles.StylesPackage;
-import org.eclipse.graphiti.mm.algorithms.styles.TextStyle;
-import org.eclipse.graphiti.mm.algorithms.styles.TextStyleRegion;
+
+import org.eclipse.graphiti.mm.algorithms.styles.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -308,11 +299,10 @@ public class StylesAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.graphiti.mm.algorithms.styles.PrecisionPoint <em>Precision Point</em>}'.
-	 * <!-- begin-user-doc --> This default
-	 * implementation returns null so that we can easily ignore cases; it's
-	 * useful to ignore a case when inheritance will catch all the cases anyway.
-	 * 
-	 * @since 0.9<!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.eclipse.graphiti.mm.algorithms.styles.PrecisionPoint
 	 * @generated
@@ -330,7 +320,6 @@ public class StylesAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see org.eclipse.graphiti.mm.algorithms.styles.TextStyle
 	 * @generated
-	 * @since 0.10
 	 */
 	public Adapter createTextStyleAdapter() {
 		return null;
@@ -345,7 +334,6 @@ public class StylesAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see org.eclipse.graphiti.mm.algorithms.styles.TextStyleRegion
 	 * @generated
-	 * @since 0.10
 	 */
 	public Adapter createTextStyleRegionAdapter() {
 		return null;

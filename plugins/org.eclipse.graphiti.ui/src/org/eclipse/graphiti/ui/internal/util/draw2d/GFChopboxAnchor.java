@@ -63,8 +63,7 @@ public class GFChopboxAnchor extends ChopboxAnchorFixed {
 				int x = getAdvancedAnchor().getGraphicsAlgorithm().getX();
 				int y = getAdvancedAnchor().getGraphicsAlgorithm().getY();
 				copy.translate(-x, -y);
-				copy.setHeight(1);
-				copy.setWidth(1);
+				copy.setSize(1, 1);
 			}
 			return copy;
 		}

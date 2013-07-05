@@ -110,11 +110,11 @@ public class GFPreferences {
 	private IEclipsePreferences getNode() {
 		if (node == null) {
 			if (Platform.getBundle("org.eclipse.graphiti.examples.common") != null) { //$NON-NLS-1$
-				node = InstanceScope.INSTANCE.getNode(GraphitiPlugin.PLUGIN_ID);
+				node = new InstanceScope().getNode(GraphitiPlugin.PLUGIN_ID);
 			} else {
 				// If the samples plug-in is not installed, we want to have defaults
 				// since there is no UI for editing the preferences.
-				node = DefaultScope.INSTANCE.getNode(GraphitiPlugin.PLUGIN_ID);
+				node = new DefaultScope().getNode(GraphitiPlugin.PLUGIN_ID);
 			}
 		}
 		return node;

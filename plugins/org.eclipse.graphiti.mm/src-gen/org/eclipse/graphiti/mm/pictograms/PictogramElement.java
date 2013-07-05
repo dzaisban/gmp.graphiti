@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,8 @@ public interface PictogramElement extends GraphicsAlgorithmContainer {
 	 * Returns the value of the '<em><b>Visible</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * This method is reserved for future usage and is currently not supported by the framework.
+	 * If the meaning of the '<em>Visible</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Visible</em>' attribute.
@@ -56,9 +57,6 @@ public interface PictogramElement extends GraphicsAlgorithmContainer {
 	/**
 	 * Sets the value of the '{@link org.eclipse.graphiti.mm.pictograms.PictogramElement#isVisible <em>Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * This method is reserved for future usage and is currently not supported by the framework.
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Visible</em>' attribute.
 	 * @see #isVisible()

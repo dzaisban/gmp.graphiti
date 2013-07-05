@@ -95,8 +95,8 @@ public class GFText extends Label implements RotatableDecoration {
 				if (text.getStyleRegions().isEmpty()) {
 					graphics.drawText(getSubStringText(), getTextLocation());
 				} else {
-					GFFigureUtil.drawRichText(graphics, getSubStringText(), getTextLocation().x(), getTextLocation()
-							.y(), configurationProvider, text);
+					GFFigureUtil.drawRichText(graphics, getSubStringText(), getTextLocation().x, getTextLocation().y,
+							configurationProvider, text);
 				}
 				graphics.popState();
 				return;
@@ -134,8 +134,8 @@ public class GFText extends Label implements RotatableDecoration {
 				if (text.getStyleRegions().isEmpty()) {
 					graphics.drawText(getSubStringText(), getTextLocation());
 				} else {
-					GFFigureUtil.drawRichText(graphics, getSubStringText(), getTextLocation().x(), getTextLocation()
-							.y(), configurationProvider, text);
+					GFFigureUtil.drawRichText(graphics, getSubStringText(), getTextLocation().x, getTextLocation().y,
+							configurationProvider, text);
 				}
 
 				bounds.height = h;
@@ -155,7 +155,7 @@ public class GFText extends Label implements RotatableDecoration {
 			Rectangle bounds = getBounds();
 			graphics.translate(bounds.x, bounds.y);
 
-			GFFigureUtil.drawRichText(graphics, getSubStringText(), getTextLocation().x(), getTextLocation().y(),
+			GFFigureUtil.drawRichText(graphics, getSubStringText(), getTextLocation().x, getTextLocation().y,
 					configurationProvider, text);
 
 			graphics.translate(-bounds.x, -bounds.y);

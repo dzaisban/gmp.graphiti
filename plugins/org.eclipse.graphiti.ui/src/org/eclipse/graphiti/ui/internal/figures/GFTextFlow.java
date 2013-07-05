@@ -94,8 +94,8 @@ public class GFTextFlow extends TextFlow {
 		if (bidiLevel == -1 && angle != 0) {
 			g.pushState();
 
-			int xOff = getParent().getBounds().width() / 2;
-			int yOff = getBounds().height() / 2;
+			int xOff = getParent().getBounds().width / 2;
+			int yOff = getBounds().height / 2;
 			g.translate(xOff, yOff);
 			g.rotate(angle);
 

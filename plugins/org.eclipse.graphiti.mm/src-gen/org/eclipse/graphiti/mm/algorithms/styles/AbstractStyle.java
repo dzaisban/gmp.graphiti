@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -181,8 +181,7 @@ public interface AbstractStyle extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.graphiti.mm.algorithms.styles.AbstractStyle#getFilled <em>Filled</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #isSetFilled()
 	 * @see #getFilled()
 	 * @see #setFilled(Boolean)
@@ -193,8 +192,7 @@ public interface AbstractStyle extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.graphiti.mm.algorithms.styles.AbstractStyle#getFilled <em>Filled</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Filled</em>' attribute is set.
 	 * @see #unsetFilled()
 	 * @see #getFilled()
@@ -237,8 +235,7 @@ public interface AbstractStyle extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.graphiti.mm.algorithms.styles.AbstractStyle#getLineVisible <em>Line Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #isSetLineVisible()
 	 * @see #getLineVisible()
 	 * @see #setLineVisible(Boolean)
@@ -249,8 +246,7 @@ public interface AbstractStyle extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.graphiti.mm.algorithms.styles.AbstractStyle#getLineVisible <em>Line Visible</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
-	 * 
-	 * @since 0.9 <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Line Visible</em>' attribute is set.
 	 * @see #unsetLineVisible()
 	 * @see #getLineVisible()

@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@
 package org.eclipse.graphiti.mm.algorithms;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.graphiti.mm.algorithms.styles.Font;
 import org.eclipse.graphiti.mm.algorithms.styles.Orientation;
 import org.eclipse.graphiti.mm.algorithms.styles.TextStyleRegion;
@@ -39,15 +40,13 @@ import org.eclipse.graphiti.mm.algorithms.styles.TextStyleRegion;
  * @see org.eclipse.graphiti.mm.algorithms.AlgorithmsPackage#getAbstractText()
  * @model abstract="true"
  * @generated
- * @noextend This interface is not intended to be extended by clients.
- * @noimplement This interface is not intended to be implemented by clients.
  */
 public interface AbstractText extends GraphicsAlgorithm {
 	/**
 	 * Returns the value of the '<em><b>Font</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Font</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Font</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -190,7 +189,6 @@ public interface AbstractText extends GraphicsAlgorithm {
 	 * If the meaning of the '<em>Style Regions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
-	 * @since 0.10
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Style Regions</em>' containment reference list.
 	 * @see org.eclipse.graphiti.mm.algorithms.AlgorithmsPackage#getAbstractText_StyleRegions()

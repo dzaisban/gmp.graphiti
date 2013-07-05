@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) 2005, 2010 SAP AG.
+ * Copyright (c) 2005, 2011 SAP AG.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,26 +18,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.graphiti.mm.algorithms.styles.AdaptedGradientColoredAreas;
-import org.eclipse.graphiti.mm.algorithms.styles.Color;
-import org.eclipse.graphiti.mm.algorithms.styles.Font;
-import org.eclipse.graphiti.mm.algorithms.styles.GradientColoredArea;
-import org.eclipse.graphiti.mm.algorithms.styles.GradientColoredAreas;
-import org.eclipse.graphiti.mm.algorithms.styles.GradientColoredLocation;
-import org.eclipse.graphiti.mm.algorithms.styles.LineStyle;
-import org.eclipse.graphiti.mm.algorithms.styles.LocationType;
-import org.eclipse.graphiti.mm.algorithms.styles.Orientation;
-import org.eclipse.graphiti.mm.algorithms.styles.Point;
-import org.eclipse.graphiti.mm.algorithms.styles.PrecisionPoint;
-import org.eclipse.graphiti.mm.algorithms.styles.RenderingStyle;
-import org.eclipse.graphiti.mm.algorithms.styles.Style;
-import org.eclipse.graphiti.mm.algorithms.styles.StylesFactory;
-import org.eclipse.graphiti.mm.algorithms.styles.StylesPackage;
-import org.eclipse.graphiti.mm.algorithms.styles.TextStyle;
-import org.eclipse.graphiti.mm.algorithms.styles.TextStyleRegion;
-import org.eclipse.graphiti.mm.algorithms.styles.UnderlineStyle;
+
+import org.eclipse.graphiti.mm.algorithms.styles.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +40,7 @@ public class StylesFactoryImpl extends EFactoryImpl implements StylesFactory {
 	 */
 	public static StylesFactory init() {
 		try {
-			StylesFactory theStylesFactory = (StylesFactory)EPackage.Registry.INSTANCE.getEFactory("http://eclipse.org/graphiti/mm/algorithms/styles"); 
+			StylesFactory theStylesFactory = (StylesFactory)EPackage.Registry.INSTANCE.getEFactory(StylesPackage.eNS_URI);
 			if (theStylesFactory != null) {
 				return theStylesFactory;
 			}
