@@ -39,7 +39,6 @@ import org.eclipse.gef.ui.actions.UndoAction;
 import org.eclipse.gef.ui.actions.UpdateAction;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
 import org.eclipse.gef.ui.parts.SelectionSynchronizer;
-import org.eclipse.gef.ui.properties.UndoablePropertySheetPage;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.layout.FillLayout;
@@ -47,7 +46,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.actions.ActionFactory;
 
 /**
  * Based on the original GEF GraphicalEditor class, this is a composite that
@@ -216,11 +214,6 @@ public abstract class GraphicalComposite extends Composite implements CommandSta
      * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
      */
     public Object getAdapter(Class type) {
-        if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
-            return new UndoablePropertySheetPage(getCommandStack(), getActionRegistry().getAction(
-                    ActionFactory.UNDO.getId()), getActionRegistry().getAction(
-                    ActionFactory.REDO.getId()));
-        }
         if (type == GraphicalViewer.class)
             return getGraphicalViewer();
         if (type == CommandStack.class)

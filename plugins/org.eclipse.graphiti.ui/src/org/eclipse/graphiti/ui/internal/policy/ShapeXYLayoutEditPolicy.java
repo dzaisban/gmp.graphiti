@@ -553,4 +553,10 @@ public class ShapeXYLayoutEditPolicy extends XYLayoutEditPolicy {
 		}
 		return gridUnit * units;
 	}
+
+	@Override
+	protected Command createChangeConstraintCommand(EditPart arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

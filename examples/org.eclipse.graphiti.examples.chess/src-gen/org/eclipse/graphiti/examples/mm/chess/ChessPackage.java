@@ -178,7 +178,6 @@ public interface ChessPackage extends EPackage {
 	 */
 	int SQUARE_FEATURE_COUNT = 6;
 
-
 	/**
 	 * The meta object id for the '{@link org.eclipse.graphiti.examples.mm.chess.impl.PieceImpl <em>Piece</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -263,7 +262,6 @@ public interface ChessPackage extends EPackage {
 	 * @generated
 	 */
 	int COLORS = 5;
-
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.graphiti.examples.mm.chess.Types <em>Types</em>}' enum.

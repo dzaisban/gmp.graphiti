@@ -286,7 +286,7 @@ public class CanFigure extends RectangleFigure implements IGraphicsAlgorithmRend
 	}
 
 	private Rectangle getInnerBounds() {
-		return getBounds().getCopy().getShrinked(defaultFigureInsets);
+		return getBounds().getCopy().getCropped(defaultFigureInsets);
 	}
 
 	@Override

@@ -38,7 +38,9 @@ public enum Colors implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NONE(0, "none", "none"), /**
+	NONE(0, "none", "none"),
+
+	/**
 	 * The '<em><b>Light</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

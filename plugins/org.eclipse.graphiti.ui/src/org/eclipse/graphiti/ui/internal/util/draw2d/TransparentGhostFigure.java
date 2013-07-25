@@ -40,10 +40,10 @@ public class TransparentGhostFigure extends ImageFigure {
 		super.paintFigure(graphics);
 		graphics.setAlpha(alpha); // fill transparent gray rectangle
 		graphics.setBackgroundColor(ColorConstants.lightGray);
-		graphics.fillRectangle(getClientArea().getShrinked(new Insets(0, 0, 1, 1)));
+		graphics.fillRectangle(getClientArea().getCropped(new Insets(0, 0, 1, 1)));
 		graphics.setAlpha(255); // draw non-transparent dotted rectangle border
 		graphics.setLineStyle(Graphics.LINE_DOT);
-		graphics.drawRectangle(getClientArea().getShrinked(new Insets(0, 0, 1, 1)));
+		graphics.drawRectangle(getClientArea().getCropped(new Insets(0, 0, 1, 1)));
 	}
 
 	public void dispose() {

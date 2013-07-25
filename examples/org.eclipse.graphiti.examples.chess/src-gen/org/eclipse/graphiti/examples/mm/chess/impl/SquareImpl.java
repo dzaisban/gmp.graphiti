@@ -16,11 +16,15 @@ package org.eclipse.graphiti.examples.mm.chess.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import org.eclipse.graphiti.examples.mm.chess.Board;
 import org.eclipse.graphiti.examples.mm.chess.ChessPackage;
 import org.eclipse.graphiti.examples.mm.chess.Colors;
@@ -30,8 +34,9 @@ import org.eclipse.graphiti.examples.mm.chess.Ranks;
 import org.eclipse.graphiti.examples.mm.chess.Square;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Square</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Square</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -49,15 +54,18 @@ import org.eclipse.graphiti.examples.mm.chess.Square;
 public class SquareImpl extends EObjectImpl implements Square {
 	/**
 	 * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final int INDEX_EDEFAULT = -1;
+
 	/**
 	 * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
@@ -66,55 +74,68 @@ public class SquareImpl extends EObjectImpl implements Square {
 
 	/**
 	 * The default value of the '{@link #getFile() <em>File</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getFile()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final Files FILE_EDEFAULT = Files.NONE;
+
 	/**
 	 * The cached value of the '{@link #getFile() <em>File</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getFile()
 	 * @generated
 	 * @ordered
 	 */
 	protected Files file = FILE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getRank() <em>Rank</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getRank()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final Ranks RANK_EDEFAULT = Ranks.NONE;
+
 	/**
 	 * The cached value of the '{@link #getRank() <em>Rank</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getRank()
 	 * @generated
 	 * @ordered
 	 */
 	protected Ranks rank = RANK_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getColor()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final Colors COLOR_EDEFAULT = Colors.NONE;
+
 	/**
 	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getColor()
 	 * @generated
 	 * @ordered
 	 */
 	protected Colors color = COLOR_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getPiece() <em>Piece</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getPiece()
 	 * @generated
 	 * @ordered
@@ -122,7 +143,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	protected Piece piece;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected SquareImpl() {
@@ -130,7 +152,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -139,7 +162,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Board getBoard() {
@@ -148,7 +172,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetBoard(Board newBoard, NotificationChain msgs) {
@@ -157,7 +182,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setBoard(Board newBoard) {
@@ -177,7 +203,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getIndex() {
@@ -185,7 +212,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setIndex(int newIndex) {
@@ -196,7 +224,71 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Files getFile() {
+		return file;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFile(Files newFile) {
+		Files oldFile = file;
+		file = newFile == null ? FILE_EDEFAULT : newFile;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ChessPackage.SQUARE__FILE, oldFile, file));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Ranks getRank() {
+		return rank;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRank(Ranks newRank) {
+		Ranks oldRank = rank;
+		rank = newRank == null ? RANK_EDEFAULT : newRank;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ChessPackage.SQUARE__RANK, oldRank, rank));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Colors getColor() {
+		return color;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setColor(Colors newColor) {
+		Colors oldColor = color;
+		color = newColor == null ? COLOR_EDEFAULT : newColor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ChessPackage.SQUARE__COLOR, oldColor, color));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Piece getPiece() {
@@ -212,7 +304,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Piece basicGetPiece() {
@@ -220,7 +313,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetPiece(Piece newPiece, NotificationChain msgs) {
@@ -234,7 +328,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setPiece(Piece newPiece) {
@@ -252,82 +347,30 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
-	 */
-	public Ranks getRank() {
-		return rank;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRank(Ranks newRank) {
-		Ranks oldRank = rank;
-		rank = newRank == null ? RANK_EDEFAULT : newRank;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ChessPackage.SQUARE__RANK, oldRank, rank));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Files getFile() {
-		return file;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFile(Files newFile) {
-		Files oldFile = file;
-		file = newFile == null ? FILE_EDEFAULT : newFile;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ChessPackage.SQUARE__FILE, oldFile, file));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Colors getColor() {
-		return color;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setColor(Colors newColor) {
-		Colors oldColor = color;
-		color = newColor == null ? COLOR_EDEFAULT : newColor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ChessPackage.SQUARE__COLOR, oldColor, color));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated not
 	 */
 	public int getOffsetX() {
-		return getFile().getValue() - 1;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated not
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	public int getOffsetY() {
-		return 8 - getRank().getValue();
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -346,7 +389,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -361,7 +405,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -374,7 +419,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -398,7 +444,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -427,7 +474,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -456,7 +504,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -479,7 +528,8 @@ public class SquareImpl extends EObjectImpl implements Square {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -499,4 +549,4 @@ public class SquareImpl extends EObjectImpl implements Square {
 		return result.toString();
 	}
 
-} // SquareImpl
+} //SquareImpl

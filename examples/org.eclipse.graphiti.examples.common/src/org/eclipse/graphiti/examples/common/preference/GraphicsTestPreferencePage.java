@@ -46,7 +46,7 @@ public class GraphicsTestPreferencePage extends FieldEditorPreferencePage implem
 	public GraphicsTestPreferencePage() {
 		super(GRID);
 		setDescription(Messages.GraphicsTestPreferencePage_PageDescription);
-		setPreferenceStore(new ScopedPreferenceStore(InstanceScope.INSTANCE, GraphitiPlugin.PLUGIN_ID));
+		setPreferenceStore(new ScopedPreferenceStore(new InstanceScope(), GraphitiPlugin.PLUGIN_ID));
 	}
 
 	@Override

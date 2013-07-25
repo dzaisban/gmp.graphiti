@@ -38,7 +38,9 @@ public enum Ranks implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NONE(0, "none", "none"), /**
+	NONE(0, "none", "none"),
+
+	/**
 	 * The '<em><b>One</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

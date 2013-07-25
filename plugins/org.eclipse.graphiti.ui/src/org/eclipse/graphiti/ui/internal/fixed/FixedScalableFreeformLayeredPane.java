@@ -47,7 +47,7 @@ public class FixedScalableFreeformLayeredPane extends ScalableFreeformLayeredPan
 			Graphics g = new FixedScaledGraphics(graphics);
 			boolean optimizeClip = getBorder() == null || getBorder().isOpaque();
 			if (!optimizeClip)
-				g.clipRect(getBounds().getShrinked(getInsets()));
+				g.clipRect(getBounds().getCropped(getInsets()));
 			g.scale(getScale());
 			g.pushState();
 			paintChildren(g);

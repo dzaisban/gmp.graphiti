@@ -470,7 +470,7 @@ public class GFFigureCanvas extends Canvas implements IAdaptable {
 			}
 		}
 
-		Rectangle clientArea = getViewport().getBounds().getShrinked(getViewport().getInsets());
+		Rectangle clientArea = getViewport().getBounds().getCropped(getViewport().getInsets());
 		Rectangle blit = clientArea.getResized(-Math.abs(dx), 0);
 		Rectangle expose = clientArea.getCopy();
 		Point dest = clientArea.getTopLeft();
@@ -590,7 +590,7 @@ public class GFFigureCanvas extends Canvas implements IAdaptable {
 			}
 		}
 
-		Rectangle clientArea = getViewport().getBounds().getShrinked(getViewport().getInsets());
+		Rectangle clientArea = getViewport().getBounds().getCropped(getViewport().getInsets());
 		Rectangle blit = clientArea.getResized(0, -Math.abs(dy));
 		Rectangle expose = clientArea.getCopy();
 		Point dest = clientArea.getTopLeft();

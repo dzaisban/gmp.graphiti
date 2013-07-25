@@ -519,17 +519,7 @@ public class GFInteractionComponentTests extends AbstractGFTests {
 	 */
 	@Test
 	public void testContextPadHidingViaToolbar() throws Exception {
-		/*
-		 * TODO: Workaround for not displayed toolbar starting with Eclipse 4.3
-		 * M1
-		 */
-		syncExec(new VoidResult() {
-			public void run() {
-				SWTWorkbenchBot swtWorkbenchBot = new SWTWorkbenchBot();
-				swtWorkbenchBot.menu("&Window").menu("Hide &Toolbar").click();
-				swtWorkbenchBot.menu("&Window").menu("Show &Toolbar").click();
-			}
-		});
+
 		Thread.sleep(DELAY);
 		/* End workaround */
 
