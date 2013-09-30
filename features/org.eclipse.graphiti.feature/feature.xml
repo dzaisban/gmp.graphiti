@@ -10,8 +10,7 @@ http://www.eclipse.org/legal/epl-v10.html
 Contributors:
        SAP AG - initial API, implementation and documentation
        mwenz - Update of Eclipse license
-       mwenz - Use central Eclipse license feature
-</copyright>
+    </copyright>
  -->
 <feature
       id="org.eclipse.graphiti.feature"
@@ -32,6 +31,10 @@ v1.0
 which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html
    </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
 
    <plugin
          id="org.eclipse.graphiti"
