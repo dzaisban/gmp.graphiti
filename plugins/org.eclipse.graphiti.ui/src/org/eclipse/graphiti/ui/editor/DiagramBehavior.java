@@ -853,6 +853,9 @@ public class DiagramBehavior implements IDiagramBehaviorUI {
 				parentPart.getSite().getSelectionProvider()
 					.setSelection(new StructuredSelection(editParts));
 			}
+ else
+				diagramContainer.getGraphicalViewer().setSelection(new StructuredSelection(editParts));
+			
 			if (editParts.size() > 0) {
 				final EditPart editpart = editParts.get(0);
 				// if the editPart is newly created it is possible that his
