@@ -1599,7 +1599,10 @@ public class PictogramElementDelegate implements IPictogramElementDelegate {
 
 	protected void addDecorators(final GraphicsAlgorithm graphicsAlgorithm, final PictogramElement pe,
 			final IFigure figure, IToolBehaviorProvider toolBehaviorProvider) {
-		if (pe.isActive() && !(pe instanceof Anchor) && !(pe instanceof Connection)
+		if (pe.isActive() /*
+						 * && !(pe instanceof Anchor) && !(pe
+						 * instanceofConnection)
+						 */
 				&& graphicsAlgorithm.equals(pe.getGraphicsAlgorithm())) {
 
 			removeDecorators(figure);
