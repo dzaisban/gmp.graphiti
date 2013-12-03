@@ -1604,10 +1604,12 @@ public class PictogramElementDelegate implements IPictogramElementDelegate {
 						 * instanceofConnection)
 						 */
 				&& graphicsAlgorithm.equals(pe.getGraphicsAlgorithm())) {
-
-			removeDecorators(figure);
-			refreshFigureColors(figure, graphicsAlgorithm);
-			figure.setBorder(null);
+			if (!(pe instanceof Connection)) {
+				removeDecorators(figure);
+				refreshFigureColors(figure, graphicsAlgorithm);
+				figure.setBorder(null);
+			}
+			
 
 			IDecorator[] decorators = toolBehaviorProvider.getDecorators(pe);
 
