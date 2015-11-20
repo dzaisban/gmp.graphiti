@@ -16,6 +16,9 @@
 package org.eclipse.graphiti.notification;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 import org.eclipse.graphiti.features.IFeatureProvider;
@@ -71,14 +74,13 @@ public class DefaultNotificationService implements INotificationService {
 	 *            the changed and related BOs list
 	 * @return the pictogram element[]
 	 */
-	protected PictogramElement[] calculateLinkedPictogramElements(ArrayList<Object> changedAndRelatedBOsList) {
+	protected PictogramElement[] calculateLinkedPictogramElements(Collection<Object> changedAndRelatedBOsList) {
 		ArrayList<PictogramElement> retList = new ArrayList<PictogramElement>();
 		final IFeatureProvider featureProvider = getDiagramTypeProvider().getFeatureProvider();
-		for (Object crbo : changedAndRelatedBOsList) {
-			final PictogramElement[] allPictogramElementsForBusinessObject = featureProvider.getAllPictogramElementsForBusinessObject(crbo);
-			for (PictogramElement pe : allPictogramElementsForBusinessObject) {
-				retList.add(pe);
-			}
+		final PictogramElement[] allPictogramElementsForBusinessObject = featureProvider
+				.getAllPictogramElementsForBusinessObjects(changedAndRelatedBOsList);
+		for (PictogramElement pe : allPictogramElementsForBusinessObject) {
+			retList.add(pe);
 		}
 		return retList.toArray(new PictogramElement[0]);
 	}
@@ -90,17 +92,26 @@ public class DefaultNotificationService implements INotificationService {
 	 *            the changed business objects
 	 * @return the pictogram element[]
 	 */
-	public PictogramElement[] calculateRelatedPictogramElements(Object[] changedBOs) {
-		ArrayList<Object> changedAndRelatedBOsList = new ArrayList<Object>();
-		for (Object cbo : changedBOs) {
-			changedAndRelatedBOsList.add(cbo);
-		}
+	public PictogramElement[] calculateRelatedPictogramElements(Collection<Object> changedBOs) {
+		Collection<Object> changedAndRelatedBOsList = changedBOs;
 		Object[] relatedBOs = getDiagramTypeProvider().getRelatedBusinessObjects(changedBOs);
-		for (Object rbo : relatedBOs) {
-			changedAndRelatedBOsList.add(rbo);
+		if (relatedBOs.length > 0) {
+			changedAndRelatedBOsList = new ArrayList<Object>(changedAndRelatedBOsList);
+			Collections.addAll(changedAndRelatedBOsList, relatedBOs);
 		}
 
 		return calculateLinkedPictogramElements(changedAndRelatedBOsList);
+	}
+
+	/**
+	 * Calculate dirty pictogram elements.
+	 * 
+	 * @param changedBOs
+	 *            the changed business objects
+	 * @return the pictogram element[]
+	 */
+	public PictogramElement[] calculateRelatedPictogramElements(Object[] changedBOs) {
+		return calculateRelatedPictogramElements(Arrays.asList(changedBOs));
 	}
 
 }

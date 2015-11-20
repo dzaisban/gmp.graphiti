@@ -15,6 +15,8 @@
  *******************************************************************************/
 package org.eclipse.graphiti.features;
 
+import java.util.Collection;
+
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 
 /**
@@ -61,6 +63,16 @@ public interface IMappingProvider {
 	 * @return the pictogram elements
 	 */
 	PictogramElement[] getAllPictogramElementsForBusinessObject(Object businessObject);
+
+	/**
+	 * Provides the pictogram elements which represents the given business
+	 * objects.
+	 * 
+	 * @param businessObject
+	 *            the given business object
+	 * @return the pictogram elements
+	 */
+	PictogramElement[] getAllPictogramElementsForBusinessObjects(Collection<Object> businessObjects);
 
 	/**
 	 * Links the pictogram element with a business object. This deletes all
