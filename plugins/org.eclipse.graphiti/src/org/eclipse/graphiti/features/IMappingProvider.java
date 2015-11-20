@@ -15,6 +15,8 @@
  *******************************************************************************/
 package org.eclipse.graphiti.features;
 
+import java.util.Collection;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.tb.IToolBehaviorProvider;
@@ -60,6 +62,16 @@ public interface IMappingProvider {
 	 * @see #link(PictogramElement, Object)
 	 */
 	Object getBusinessObjectForPictogramElement(PictogramElement pictogramElement);
+
+	/**
+	 * Provides the pictogram elements which represents the given business
+	 * objects.
+	 * 
+	 * @param businessObject
+	 *            the given business object
+	 * @return the pictogram elements
+	 */
+	PictogramElement[] getAllPictogramElementsForBusinessObjects(Collection<Object> businessObjects);
 
 	/**
 	 * Provides the pictogram elements which represents the given business

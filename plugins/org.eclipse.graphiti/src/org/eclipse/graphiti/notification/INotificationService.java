@@ -15,6 +15,8 @@
  *******************************************************************************/
 package org.eclipse.graphiti.notification;
 
+import java.util.Collection;
+
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 
 /**
@@ -30,6 +32,15 @@ public interface INotificationService {
 	 * @return the pictogram element[]
 	 */
 	PictogramElement[] calculateRelatedPictogramElements(Object[] bos);
+
+	/**
+	 * Calculate dirty pictogram elements.
+	 * 
+	 * @param bos
+	 *            the changed business objects
+	 * @return the pictogram element[]
+	 */
+	PictogramElement[] calculateRelatedPictogramElements(Collection<Object> bos);
 
 	/**
 	 * Update dirty pictogram elements.

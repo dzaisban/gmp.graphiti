@@ -18,6 +18,8 @@
  *******************************************************************************/
 package org.eclipse.graphiti.dt;
 
+import java.util.Collection;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.graphiti.features.IFeatureProviderHolder;
 import org.eclipse.graphiti.features.impl.AbstractUpdateFeature;
@@ -156,6 +158,15 @@ public interface IDiagramTypeProvider extends IExtension, IFeatureProviderHolder
 	 * @return the related business objects
 	 */
 	Object[] getRelatedBusinessObjects(Object[] bos);
+
+	/**
+	 * Gets the related business objects.
+	 * 
+	 * @param bos
+	 *            the business objects
+	 * @return the related business objects
+	 */
+	Object[] getRelatedBusinessObjects(Collection<Object> bos);
 
 	/**
 	 * Gets the graphics algorithm renderer factory.
